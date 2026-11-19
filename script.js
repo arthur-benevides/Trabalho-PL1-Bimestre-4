@@ -158,7 +158,111 @@ conteudo.innerHTML = `
 
         const resultados = referenciasBibliograficas.filter(ref =>
             ref.autor.toLowerCase().includes(termo) ||
-            ref.titulo.toLowerCase().includes(termo) ||
-            ref.localAno.toLowerCase().includes(termo)
+            ref.titulo.toLowerCase().includes(termo)
         ); 
+    })
     }
+
+    const PUE_PADRAO = 1.2;
+
+    const criteriosResfriamento = [
+        { nome: "PUE", resumo: "Eficiência energética; ideal próximo de 1,0 e eficiente abaixo de 1,2." },
+        { nome: "WUE", resumo: "Consumo de água em L/kWh; circuitos fechados buscam próximo de 0,0 L/kWh." },
+        { nome: "Resfriamento a Ar", resumo: "Eficiente até ~15 kW–20 kW por rack; maior gasto em ventiladores e chillers." },
+        { nome: "Resfriamento Líquido", resumo: "Suporta 40 kW a >120 kW por rack; PUE entre 1,1 e 1,25 e reaproveitamento de calor." }
+    ];
+
+    function calcularPotenciaTotal(kwTi, pueInformado = PUE_PADRAO) {
+    const ti = Number(kwTi);
+    const pue = pueInformado === "" ? PUE_PADRAO : Number(pueInformado);
+
+    if (Number.isNaN(ti) || ti <= 0 || Number.isNaN(pue) || pue < 1) {
+        return null;
+    }
+
+        return (ti * pue).toFixed(2);
+    }
+
+    const montarListaCriterios = (lista) => {
+    const ul = document.getElementById("lista-criterios-js");
+    if (!ul) return;
+
+    ul.innerHTML = lista
+    .map((item) => `<li><strong>${item.nome}:</strong> ${item.resumo}</li>`)
+    .join("");
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+    montarListaCriterios(criteriosResfriamento);
+
+    const inputBusca = document.getElementById("campo-busca-metrica");
+    const btnBuscaExata = document.getElementById("btn-buscar-exato");
+    const divBusca = document.getElementById("resultado-busca");
+    
+
+    if (inputBusca && divBusca) {
+    inputBusca.addEventListener("input", () => {
+      const termo = inputBusca.value.toLowerCase().trim();
+      const encontrados = criteriosResfriamento.filter(
+        (c) => c.nome.toLowerCase().includes(termo) || c.resumo.toLowerCase().includes(termo)
+      );
+
+      if (encontrados.length === 0) {
+        divBusca.innerHTML = "<p>Nenhum item encontrado.</p>";
+      } else {
+        divBusca.innerHTML = encontrados
+          .map((item) => `<p><strong>${item.nome}:</strong> ${item.resumo}</p>`)
+          .join("");
+      }
+    });
+  }
+
+  if (btnBuscaExata && inputBusca && divBusca) {
+    btnBuscaExata.addEventListener("click", () => {
+      const termo = inputBusca.value.toLowerCase().trim();
+      const itemExato = criteriosResfriamento.find((c) => c.nome.toLowerCase() === termo);
+
+      if (itemExato) {
+        divBusca.innerHTML = `<p>Encontrado: <strong>${itemExato.nome}</strong> — ${itemExato.resumo}</p>`;
+      } else {
+        divBusca.innerHTML = "<p>Nenhuma correspondência exata pelo nome.</p>";
+      }
+    });
+  }
+
+  const btnCalcular = document.getElementById("btn-calcular-pue");
+  const divResultadoPue = document.getElementById("resultado-pue");
+  if (btnCalcular && divResultadoPue) {
+    btnCalcular.addEventListener("click", () => {
+      const kwVal = document.getElementById("kw-ti")?.value;
+      const pueVal = document.getElementById("valor-pue")?.value;
+      const total = calcularPotenciaTotal(kwVal, pueVal);
+
+      if (total === null) {
+        divResultadoPue.innerHTML = "<p>Digite valores válidos (TI > 0 e PUE >= 1).</p>";
+      } else {
+        divResultadoPue.innerHTML = `<p>Potência total estimada: <strong>${total} kW</strong></p>`;
+      }
+    });
+  }
+
+  const btnMenu = document.getElementById("btn-toggle-menu");
+  const nav = document.querySelector("nav");
+  if (btnMenu && nav) {
+    btnMenu.addEventListener("click", () => {
+      if (nav.hidden) {
+        nav.hidden = false;
+      } else {
+        nav.hidden = true;
+      }
+    });
+  }
+
+  const btnResumo = document.getElementById("btn-toggle-resumo");
+  const listaResumo = document.getElementById("lista-criterios-js");
+  if (btnResumo && listaResumo) {
+    btnResumo.addEventListener("click", () => {
+      listaResumo.hidden = !listaResumo.hidden;
+    });
+  }
+});
