@@ -32,3 +32,15 @@ tr:nth-child(even) {
     max-width: 900px;
     padding: 10px;
 }
+
+/* MENU LATERAL */
+
+.btn-toggle-nav .seta {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    /* Quando o menu está aberto, gira a seta para apontar para a direita (fechar) */
+    .btn-toggle-nav[aria-expanded="true"] .seta {
+        transform: rotate(180deg);
+    }
