@@ -19,6 +19,7 @@
 <body>
   <header>
 
+    <!--Barra de Navegação lateral-->
     <div>
         <button class = "btn btn-primary shadow rounded-start rounded-0 py-3 px-2 btn-toggle-nav"
         type="button"
@@ -29,18 +30,16 @@
         tittle="Abrir/Fechar Menu">
         <span class="seta">&#10094;</span>
         </button>
+
         <div class="collapse collapse-horizontal show" id="menuLateralInterativo">
             <div class="bg-white p-3 rounded-start border shadow"
                  style="max-height: 350px;">
                 <ul class="nav nav-pills nav-pills-vertical flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Activity</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="index.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tema.html">Tema</a>
+                        <a class="nav-link active" aria-current="page" href="tema.html">Tema</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="conclusao.html">Conclusão</a>
@@ -49,116 +48,127 @@
             </div>
         </div>
     </div>
-
-
-
-
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="index.html" target="_self">Início</a></li>
-                    <li><a href="tema.html" target="_self">Tema</a></li>
-                    <li><a href="conclusao.html" target="_self">Conclusão</a></li>
-                </ul>
-            </nav>
-        </div>
   </header>
 
   <main>
 
     <div class="container">
-        <section class="topico5">
-            <h3>Engenharia Sustentável: Indicadores (PUE/WUE) e Comparativo Técnico de Resfriamento em Data Centers de IA</h3>
-            <p>A transição da computação em nuvem tradicional para cargas de trabalho de Inteligência Artificial alterou radicalmente o perfil térmico das instalações. Enquanto racks de servidores corporativos convencionais operam com densidades de potência entre 5 kW e 10 kW, clusters modernos de treinamento e inferência de IA atingem facilmente entre <b>40 kW e mais de 120 kW por rack.</b></p>
-            <p>Para avaliar e mitigar o impacto ambiental dessa alta densidade, a engenharia de data centers utiliza dois indicadores globais padronizados pela organização The Green Grid:</p>
+        <section class="topico3">
+            <h3> O Programa Redata e o Arcabouço de Incentivos no Brasil </h3>
+            <p>Historicamente, a competitividade do Brasil na atração de investimentos em infraestrutura
+              digital foi limitada pelo elevado custo tributário incidente sobre a importação de bens de
+              capital de tecnologia da informação e comunicação (TIC), como servidores, roteadores de alta
+              capacidade e sistemas de refrigeração industrial. Esse cenário fazia com que grande parte do
+              tráfego de dados gerado por usuários e empresas brasileiras fosse processado em data centers
+              localizados nos Estados Unidos (especialmente na Virgínia do Norte), elevando custos cambiais
+              e reduzindo a soberania digital do país.</p>
+              <p>Para reverter esse quadro, a agenda pública brasileira estruturou o <strong> Programa Redata (Regime
+              Especial de Tributação para Serviços de Data Center)</strong>. O objetivo central do programa é reduzir
+              o custo de investimento inicial (CAPEX) para a implantação, modernização e ampliação de
+              infraestruturas de processamento e armazenamento de dados em território nacional. Quando
+              combinado ao excedente energético e à malha de cabos submarinos do Nordeste, o programa
+              cria uma sinergia estratégica que reduz simultaneamente o custo de implantação (CAPEX), o
+              custo operacional (OPEX) e a latência internacional.</p>
+              <p>Os pilares estruturais do Programa Redata dividem-se em três eixos fundamentais: </p>
+        
             <ul>
-                <li><b>PUE (Power Usage Effectiveness):</b> Mede a eficiência energética da instalação, calculada pela razão entre a energia total consumida pelo data center e a energia efetivamente utilizada pelos equipamentos de TI. O valor ideal teórico é <b>1,0</b> (indicando que toda a energia vai para a computação, sem perdas com climatização ou conversão elétrica). Data centers eficientes operam com PUE abaixo de <b>1,2</b>.</li>
-                <li><b>WUE (Water Usage Effectiveness):</b> Mede a eficiência no uso da água, expressa em litros de água consumidos por quilowatt-hora (L/kWh) gasto pelos equipamentos de TI. Sistemas modernos em circuito fechado buscam atingir um WUE próximo de <b>0,0 L/kWh.</b></li>
+                <li><strong>Desoneração Tributária de Bens de Capital:</strong> Suspensão ou aplicação de alíquota  zero
+                    de tributos federais (PIS/Pasep, Cofins, IPI e Imposto de Importação) na aquisição no
+                    mercado interno ou na importação de servidores, unidades de armazenamento,
+                    equipamentos de rede e sistemas críticos de energia e climatização sem similar
+                    nacional. </li>
+                <li><strong>Estímulo à Cadeia Produtiva, Pesquisa e Desenvolvimento (P&D):</strong> Fomento à
+                    integração de fornecedores nacionais de engenharia, construção civil e componentes
+                    elétricos, acompanhado da exigência de contrapartidas financeiras voltadas à pesquisa,
+                    desenvolvimento e capacitação tecnológica em parceria com universidades e institutos
+                    de ciência e tecnologia (ICTs). </li>
+                <li><strong>Condicionalidades Socioambientais:</strong> Estabelecimento de diretrizes que vinculam a
+                    fruição dos benefícios fiscais à contratação de energia proveniente de fontes
+                    renováveis e ao cumprimento de metas rigorosas de eficiência energética e hídrica,
+                    evitando que a renúncia fiscal subsidie empreendimentos ecologicamente predatórios. </li>
             </ul>
-            <div class="tabela">
-                <table>
-            <thead>
-              <tr>
-                <th>Critério Técnico / Ambiental</th>
-                <th>Resfriamento a Ar (Air Cooling)</th>
-                <th>Resfriamento Líquido (Liquid Cooling / Direct-to-Chip)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Princípio de Funcionamento</strong></td>
-                <td>Circulação de ar frio insuflado por unidades CRAC/CRAH em corredores frios/quentes para remover o calor dos dissipadores metálicos dos chips.</td>
-                <td>Circulação de fluido dielétrico ou água tratada diretamente sobre os processadores (<em>cold plates</em>) ou por imersão total dos servidores em tanques.</td>
-              </tr>
-              <tr>
-                <td><strong>Capacidade de Densidade Térmica</strong></td>
-                <td>Limitada; eficiente até aproximadamente 15 kW–20 kW por <em>rack</em>. Acima desse patamar, exige fluxos de ar e ventilação inviáveis energeticamente.</td>
-                <td>Altíssima; projeta-se para suportar de 40 kW a mais de 120 kW por <em>rack</em>, sendo indispensável para clusters modernos de IA de alta densidade.</td>
-              </tr>
-              <tr>
-                <td><strong>Eficiência Energética (PUE)</strong></td>
-                <td>PUE geralmente entre <strong>1,4 e 1,8</strong>, devido ao alto consumo elétrico dos ventiladores de alta rotação e compressores (<em>chillers</em>).</td>
-                <td>PUE altamente otimizado, frequentemente entre <strong>1,1 e 1,25</strong>, pois os líquidos possuem capacidade térmica volumétrica mais de 3.000 vezes superior à do ar.</td>
-              </tr>
-              <tr>
-                <td><strong>Consumo Hídrico (WUE)</strong></td>
-                <td>Quando acoplado a torres de resfriamento evaporativas tradicionais, apresenta alto consumo e evaporação contínua de água potável (<em>WUE</em> elevado).</td>
-                <td>Opera majoritariamente em <strong>circuitos fechados</strong> (<em>closed-loop</em>) sem evaporação direta no ambiente, reduzindo drasticamente o consumo contínuo (<em>WUE</em> próximo de zero).</td>
-              </tr>
-              <tr>
-                <td><strong>Reaproveitamento de Calor</strong></td>
-                <td>Baixa viabilidade técnica devido à baixa temperatura e à dispersão do ar exaurido.</td>
-                <td>Alta viabilidade; o fluido retorna em temperaturas elevadas (45°C a 60°C), facilitando o reaproveitamento térmico em processos industriais ou aquecimento urbano.</td>
-              </tr>
-              <tr>
-                <td><strong>Ocupação de Espaço (<em>Footprint</em>)</strong></td>
-                <td>Exige corredores largos e grandes salas técnicas para movimentação de grandes volumes de ar.</td>
-                <td>Permite maior adensamento de servidores por metro quadrado, reduzindo a área construída necessária para a mesma capacidade computacional.</td>
-              </tr>
-              <tr>
-                <td><strong>Custo de Implantação e Complexidade</strong></td>
-                <td>Menor custo inicial (<em>CAPEX</em>) e manutenção amplamente dominada pelo mercado técnico tradicional.</td>
-                <td>Maior investimento inicial (<em>CAPEX</em>), exigindo tubulações dedicadas, trocadores de calor (CDUs), sensores de vazamento e mão de obra especializada.</td>
-              </tr>
-            </tbody>
-              </table>
-            </div>
-        </section>
-
-<h3>Consulta Rápida e Simulador (PUE / WUE)</h3>
-
-  <div>
-    <label for="campo-busca-metrica">Buscar métrica ou sistema:</label>
-    <input type="text" id="campo-busca-metrica" placeholder="Ex: PUE, WUE, líquido, ar...">
-    <button type="button" id="btn-buscar-exato">Buscar exato (.find)</button>
-    <div id="resultado-busca"></div>
-  </div>
-
-  <div>
-    <h4>Simulador de Potência Total</h4>
-    <label for="kw-ti">Potência de TI (kW):</label>
-    <input type="number" id="kw-ti" value="100">
-
-    <label for="valor-pue">PUE (padrão 1.2):</label>
-    <input type="number" id="valor-pue" step="0.05" placeholder="1.2">
-
-    <button type="button" id="btn-calcular-pue">Calcular</button>
-    <div id="resultado-pue"></div>
-  </div>
-
-  <div>
-    <h4>Resumo dos Critérios</h4>
-    <ul id="lista-criterios-js"></ul>
-  </div>
-
-  <div>
-    <button type="button" id="btn-toggle-menu">Abrir/Fechar Menu</button>
-    <button type="button" id="btn-toggle-resumo">Mostrar/Esconder Resumo</button>
-  </div>
-
-
-
-        <p>Embora o resfriamento líquido represente um avanço decisivo na eficiência energética e na contenção do desperdício hídrico, sua adoção em larga escala no Brasil ainda enfrenta barreiras relacionadas ao custo inicial de capital — problema que políticas como o Programa Redata buscam mitigar — e à necessidade de adaptação estrutural de plantas antigas (legacy data centers).</p>
+            <section class="topico5">
+                <h3>Engenharia Sustentável: Indicadores (PUE/WUE) e Comparativo Técnico de Resfriamento em Data Centers de IA</h3>
+                <p>A transição da computação em nuvem tradicional para cargas de trabalho de Inteligência Artificial alterou radicalmente o perfil térmico das instalações. Enquanto racks de servidores corporativos convencionais operam com densidades de potência entre 5 kW e 10 kW, clusters modernos de treinamento e inferência de IA atingem facilmente entre <b>40 kW e mais de 120 kW por rack.</b></p>
+                <p>Para avaliar e mitigar o impacto ambiental dessa alta densidade, a engenharia de data centers utiliza dois indicadores globais padronizados pela organização The Green Grid:</p>
+            <ul>
+                    <li><b>PUE (Power Usage Effectiveness):</b> Mede a eficiência energética da instalação, calculada pela razão entre a energia total consumida pelo data center e a energia efetivamente utilizada pelos equipamentos de TI. O valor ideal teórico é <b>1,0</b> (indicando que toda a energia vai para a computação, sem perdas com climatização ou conversão elétrica). Data centers eficientes operam com PUE abaixo de <b>1,2</b>.</li>
+                    <li><b>WUE (Water Usage Effectiveness):</b> Mede a eficiência no uso da água, expressa em litros de água consumidos por quilowatt-hora (L/kWh) gasto pelos equipamentos de TI. Sistemas modernos em circuito fechado buscam atingir um WUE próximo de <b>0,0 L/kWh.</b></li>
+            </ul>
+                <div class="tabela">
+                    <table>
+                <thead>
+                  <tr>
+                    <th>Critério Técnico / Ambiental</th>
+                    <th>Resfriamento a Ar (Air Cooling)</th>
+                    <th>Resfriamento Líquido (Liquid Cooling / Direct-to-Chip)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Princípio de Funcionamento</strong></td>
+                    <td>Circulação de ar frio insuflado por unidades CRAC/CRAH em corredores frios/quentes para remover o calor dos dissipadores metálicos dos chips.</td>
+                    <td>Circulação de fluido dielétrico ou água tratada diretamente sobre os processadores (<em>cold plates</em>) ou por imersão total dos servidores em tanques.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Capacidade de Densidade Térmica</strong></td>
+                    <td>Limitada; eficiente até aproximadamente 15 kW–20 kW por <em>rack</em>. Acima desse patamar, exige fluxos de ar e ventilação inviáveis energeticamente.</td>
+                    <td>Altíssima; projeta-se para suportar de 40 kW a mais de 120 kW por <em>rack</em>, sendo indispensável para clusters modernos de IA de alta densidade.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Eficiência Energética (PUE)</strong></td>
+                    <td>PUE geralmente entre <strong>1,4 e 1,8</strong>, devido ao alto consumo elétrico dos ventiladores de alta rotação e compressores (<em>chillers</em>).</td>
+                    <td>PUE altamente otimizado, frequentemente entre <strong>1,1 e 1,25</strong>, pois os líquidos possuem capacidade térmica volumétrica mais de 3.000 vezes superior à do ar.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Consumo Hídrico (WUE)</strong></td>
+                    <td>Quando acoplado a torres de resfriamento evaporativas tradicionais, apresenta alto consumo e evaporação contínua de água potável (<em>WUE</em> elevado).</td>
+                    <td>Opera majoritariamente em <strong>circuitos fechados</strong> (<em>closed-loop</em>) sem evaporação direta no ambiente, reduzindo drasticamente o consumo contínuo (<em>WUE</em> próximo de zero).</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Reaproveitamento de Calor</strong></td>
+                    <td>Baixa viabilidade técnica devido à baixa temperatura e à dispersão do ar exaurido.</td>
+                    <td>Alta viabilidade; o fluido retorna em temperaturas elevadas (45°C a 60°C), facilitando o reaproveitamento térmico em processos industriais ou aquecimento urbano.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ocupação de Espaço (<em>Footprint</em>)</strong></td>
+                    <td>Exige corredores largos e grandes salas técnicas para movimentação de grandes volumes de ar.</td>
+                    <td>Permite maior adensamento de servidores por metro quadrado, reduzindo a área construída necessária para a mesma capacidade computacional.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Custo de Implantação e Complexidade</strong></td>
+                    <td>Menor custo inicial (<em>CAPEX</em>) e manutenção amplamente dominada pelo mercado técnico tradicional.</td>
+                    <td>Maior investimento inicial (<em>CAPEX</em>), exigindo tubulações dedicadas, trocadores de calor (CDUs), sensores de vazamento e mão de obra especializada.</td>
+                  </tr>
+                </tbody>
+                  </table>
+                </div>
+            </section>
+        <h3>Consulta Rápida e Simulador (PUE / WUE)</h3>
+        <div>
+            <label for="campo-busca-metrica">Buscar métrica ou sistema:</label>
+            <input type="text" id="campo-busca-metrica" placeholder="Ex: PUE, WUE, líquido, ar...">
+            <button type="button" id="btn-buscar-exato">Buscar exato (.find)</button>
+        <div id="resultado-busca"></div>
+          </div>
+        <div>
+            <h4>Simulador de Potência Total</h4>
+            <label for="kw-ti">Potência de TI (kW):</label>
+            <input type="number" id="kw-ti" value="100">
+            <label for="valor-pue">PUE (padrão 1.2):</label>
+            <input type="number" id="valor-pue" step="0.05" placeholder="1.2">
+            <button type="button" id="btn-calcular-pue">Calcular</button>
+        <div id="resultado-pue"></div>
+          </div>
+        <div>
+            <h4>Resumo dos Critérios</h4>
+            <ul id="lista-criterios-js"></ul>
+        </div>
+        <div>
+            <button type="button" id="btn-toggle-menu">Abrir/Fechar Menu</button>
+            <button type="button" id="btn-toggle-resumo">Mostrar/Esconder Resumo</button>
+        </div>
+            <p>Embora o resfriamento líquido represente um avanço decisivo na eficiência energética e na contenção do desperdício hídrico, sua adoção em larga escala no Brasil ainda enfrenta barreiras relacionadas ao custo inicial de capital — problema que políticas como o Programa Redata buscam mitigar — e à necessidade de adaptação estrutural de plantas antigas (legacy data centers).</p>
         
     </div>
 
