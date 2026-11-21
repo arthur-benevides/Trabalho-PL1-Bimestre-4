@@ -266,3 +266,198 @@ conteudo.innerHTML = `
     });
   }
 });
+
+const eixosImpacto = [
+    {
+        id: "agua-evaporativa",
+        categoria: "Água",
+        classe: "agua",
+        titulo: "Torres evaporativas consomem água potável",
+        resumo: "Servidores e GPUs transformam quase toda a energia em calor, e a água evapora para dissipá-lo.",
+        detalhe: "Nos sistemas tradicionais, grandes volumes de água potável absorvem o calor e o liberam na atmosfera por evaporação. Essa água não volta à bacia: ela é consumida."
+    },
+    {
+        id: "agua-desigual",
+        categoria: "Água",
+        classe: "agua",
+        titulo: "12% da água doce, mas mal distribuída",
+        resumo: "O Brasil concentra cerca de 12% da água doce superficial do planeta.",
+        detalhe: "Cerca de 80% desse volume está na bacia Amazônica, longe dos grandes centros. O Sudeste, onde ficam a maioria dos data centers, enfrenta crises hídricas recorrentes e disputa pela água entre abastecimento, agricultura e indústria."
+    },
+    {
+        id: "agua-transparencia",
+        categoria: "Transparência",
+        classe: "transparencia",
+        titulo: "Ninguém sabe ao certo quanta água é usada",
+        resumo: "Faltam regras que obriguem a divulgar a água captada, consumida e devolvida.",
+        detalhe: "Sem dados públicos e auditáveis, fica difícil fiscalizar o impacto ambiental e planejar o uso da água nos comitês de bacia hidrográfica."
+    },
+    {
+        id: "energia-carga",
+        categoria: "Energia",
+        classe: "energia",
+        titulo: "Uma carga do tamanho de uma cidade",
+        resumo: "Um data center hyperscale de IA pode demandar de 50 MW a mais de 200 MW contínuos.",
+        detalhe: "É uma carga equivalente ao consumo residencial de cidades de médio porte, funcionando 24 horas por dia, 7 dias por semana."
+    },
+    {
+        id: "energia-rede",
+        categoria: "Energia",
+        classe: "energia",
+        titulo: "Matriz limpa não elimina o desafio da rede",
+        resumo: "O crescimento abrupto da demanda exige planejamento junto ao ONS.",
+        detalhe: "Sem planejamento, há risco de sobrecarga nas redes de distribuição locais e de acionamento de termelétricas fósseis em períodos de estiagem severa."
+    },
+    {
+        id: "clima-ilhas",
+        categoria: "Clima local",
+        classe: "clima",
+        titulo: "Ar quente que vai para a vizinhança",
+        resumo: "A exaustão contínua de ar quente altera o balanço térmico do entorno.",
+        detalhe: "Isso contribui para a intensificação de ilhas de calor urbanas e afeta o conforto térmico das comunidades vizinhas."
+    },
+    {
+        id: "solucao-liquido",
+        categoria: "Soluções",
+        classe: "solucao",
+        titulo: "Resfriamento líquido em circuito fechado",
+        resumo: "Reduz drasticamente o consumo contínuo de água (WUE próximo de zero).",
+        detalhe: "Além de suportar de 40 kW a mais de 120 kW por rack, permite reaproveitar o calor. O desafio é o custo inicial, que o Programa Redata busca reduzir."
+    },
+    {
+        id: "solucao-transparencia",
+        categoria: "Soluções",
+        classe: "solucao",
+        titulo: "Metas públicas de PUE e WUE",
+        resumo: "Divulgar indicadores permite fiscalizar e comparar empreendimentos.",
+        detalhe: "O Redata vincula benefícios fiscais a energia renovável e a metas de eficiência energética e hídrica, evitando que a renúncia fiscal subsidie projetos predatórios."
+    },
+    {
+        id: "solucao-localizacao",
+        categoria: "Soluções",
+        classe: "solucao",
+        titulo: "Descentralizar a localização",
+        resumo: "Escolher regiões com energia renovável abundante alivia o Sudeste.",
+        detalhe: "Estados como o Ceará têm potencial eólico e solar, mas precisam de infraestrutura de transmissão. Cada região traz vantagens e novos impactos."
+    }
+];
+
+// Estado atual do filtro
+let categoriaAtiva = "Todos";
+
+// Filtra os eixos por categoria (filter). Categoria tem valor padrão.
+function filtrarEixos(lista, categoria = "Todos") {
+    return lista.filter(eixo => categoria === "Todos" || eixo.categoria === categoria);
+}
+
+function criarCartaoImpacto(eixo) {
+    return `
+        <article class="imp-cartao imp-${eixo.classe}">
+            <span class="imp-etiqueta">${eixo.categoria}</span>
+            <h5>${eixo.titulo}</h5>
+            <p>${eixo.resumo}</p>
+            <button type="button" class="imp-botao-link" data-id="${eixo.id}"
+                aria-expanded="false" aria-controls="detalhe-${eixo.id}">Saiba mais</button>
+            <p class="imp-detalhe" id="detalhe-${eixo.id}" hidden>${eixo.detalhe}</p>
+        </article>
+    `;
+}
+
+function renderizarCartoes() {
+    const caixa = document.getElementById("imp-cartoes");
+    const contagem = document.getElementById("imp-contagem");
+    const lista = filtrarEixos(eixosImpacto, categoriaAtiva);
+
+    caixa.innerHTML = lista.length
+        ? lista.map(criarCartaoImpacto).join("")
+        : "<p>Nenhum impacto encontrado para esse filtro.</p>";
+    contagem.textContent = `${lista.length} de ${eixosImpacto.length} impactos exibidos`;
+}
+
+function iniciarCartoes() {
+    const caixaFiltros = document.getElementById("imp-filtros");
+    const caixa = document.getElementById("imp-cartoes");
+    if (!caixaFiltros || !caixa) return;
+
+    // Categorias únicas, geradas a partir do próprio array
+    const categorias = ["Todos", ...new Set(eixosImpacto.map(eixo => eixo.categoria))];
+
+    caixaFiltros.innerHTML = categorias.map(cat => `
+        <button type="button" class="imp-filtro" data-categoria="${cat}"
+            aria-pressed="${cat === categoriaAtiva}">${cat}</button>
+    `).join("");
+
+    caixaFiltros.addEventListener("click", (evento) => {
+        const botao = evento.target.closest("button[data-categoria]");
+        if (!botao) return;
+        categoriaAtiva = botao.dataset.categoria;
+        caixaFiltros.querySelectorAll("button").forEach(b =>
+            b.setAttribute("aria-pressed", b === botao));
+        renderizarCartoes();
+    });
+
+    // Abre e fecha o "Saiba mais" de cada cartão
+    caixa.addEventListener("click", (evento) => {
+        const botao = evento.target.closest("button[data-id]");
+        if (!botao) return;
+        const detalhe = document.getElementById(`detalhe-${botao.dataset.id}`);
+        const abrir = detalhe.hidden;
+        detalhe.hidden = !abrir;
+        botao.setAttribute("aria-expanded", abrir);
+        botao.textContent = abrir ? "Mostrar menos" : "Saiba mais";
+    });
+
+    renderizarCartoes();
+}
+
+// ---------- 2) Mito ou fato? ----------
+const mitosEFatos = [
+    {
+        mito: "O Brasil tem tanta água que data centers não são um problema.",
+        fato: "A água é abundante no total, mas cerca de 80% está na Amazônia. O Sudeste, que concentra os data centers, tem crises hídricas recorrentes."
+    },
+    {
+        mito: "Com matriz elétrica limpa, o impacto energético é zero.",
+        fato: "A matriz é majoritariamente limpa, mas o crescimento abrupto da demanda pode sobrecarregar redes locais e acionar termelétricas fósseis na estiagem."
+    },
+    {
+        mito: "Data center só consome recursos; não afeta quem mora ao redor.",
+        fato: "A exaustão contínua de ar quente altera o balanço térmico do entorno e pode intensificar ilhas de calor urbanas."
+    },
+    {
+        mito: "Já sabemos exatamente quanta água cada data center consome.",
+        fato: "Ainda faltam marcos regulatórios que obriguem a divulgação pública e auditável da água captada, consumida e devolvida."
+    }
+];
+
+function iniciarMitos() {
+    const caixa = document.getElementById("imp-mitos");
+    if (!caixa) return;
+
+    caixa.innerHTML = mitosEFatos.map((item, i) => `
+        <div class="imp-mito">
+            <p><strong>Mito:</strong> ${item.mito}</p>
+            <button type="button" class="imp-botao" data-indice="${i}"
+                aria-expanded="false" aria-controls="fato-${i}">Revelar o fato</button>
+            <p class="imp-fato" id="fato-${i}" hidden><strong>Fato:</strong> ${item.fato}</p>
+        </div>
+    `).join("");
+
+    caixa.addEventListener("click", (evento) => {
+        const botao = evento.target.closest("button[data-indice]");
+        if (!botao) return;
+        const fato = document.getElementById(`fato-${botao.dataset.indice}`);
+        fato.hidden = !fato.hidden;
+        botao.setAttribute("aria-expanded", !fato.hidden);
+        botao.textContent = fato.hidden ? "Revelar o fato" : "Esconder o fato";
+    });
+}
+
+// ---------- Ponto de entrada: só roda onde a seção existe ----------
+function iniciarImpactos() {
+    if (!document.getElementById("impactos-ambientais")) return;
+    iniciarCartoes();
+    iniciarMitos();
+}
+document.addEventListener("DOMContentLoaded", iniciarImpactos);
+
