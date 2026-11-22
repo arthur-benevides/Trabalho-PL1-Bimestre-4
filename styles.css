@@ -1,3 +1,4 @@
+
 /* TEMA */
 .tabela {
     overflow-x: auto;
@@ -19,13 +20,13 @@ th, td {
 }
 
 th {
-  background-color: #0f4c81;
-  color: #ffffff;
-  border-color: #0f4c81;
+  background-color: #3551a4;
+  color: #0b0b0b;
+  border-color: #132442;
 }
 
 tr:nth-child(even) {
-  background-color: #f8fafc;
+  background-color: #8ad6d6;
 }
 
 .container {
@@ -39,7 +40,6 @@ header .navbar.barra-grupo2 {
   background-color: #3551A4 !important;
 }
 
-/* Margem extra no Grupo 2 e nos links para aproximar do centro */
 header .titulo-grupo2 {
   font-size: 2rem;
   color: #ffffff !important;
@@ -72,4 +72,34 @@ header .nav-link.active {
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 2px;
+}
+
+/*Botão Voltar ao Portal*/
+.btn-voltar-portal {
+  display: inline-block;
+  padding: 0.7rem 1.35rem;
+  background-color: #3551A4;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-voltar-portal:hover {
+  background-color: #273d7d;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(53, 81, 164, 0.28);
+}
+
+.btn-voltar-portal:active {
+  transform: scale(0.98);
+}
+
+.btn-voltar-portal:focus-visible {
+  outline: 2px solid #3551A4;
+  outline-offset: 3px;
 }

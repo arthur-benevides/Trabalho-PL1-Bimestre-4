@@ -461,3 +461,15 @@ function iniciarImpactos() {
 }
 document.addEventListener("DOMContentLoaded", iniciarImpactos);
 
+/*BOTÃO VOLTAR AO PORTAL*/
+document.addEventListener("DOMContentLoaded", () => {
+  const btnPortal = document.getElementById("btn-voltar-portal");
+  const urlPortal = "https://mrstarr472.github.io/PortalGeografia117/";
+
+  if (!btnPortal) return;
+
+  btnPortal.addEventListener("click", () => {
+    window.location.href = urlPortal;
+  });
+});
+
