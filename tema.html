@@ -192,31 +192,34 @@
                   </table>
                 </div>
             </section>
-        <h3>Consulta Rápida e Simulador (PUE / WUE)</h3> <hr>
-        <div>
-            <label for="campo-busca-metrica">Buscar métrica ou sistema:</label>
-            <input type="text" id="campo-busca-metrica" placeholder="Ex: PUE, WUE, líquido, ar...">
-            <button type="button" id="btn-buscar-exato">Buscar exato (.find)</button>
-        <div id="resultado-busca"></div>
-          </div>
-        <div>
-            <h4>Simulador de Potência Total</h4>
-            <label for="kw-ti">Potência de TI (kW):</label>
-            <input type="number" id="kw-ti" value="100">
-            <label for="valor-pue">PUE (padrão 1.2):</label>
-            <input type="number" id="valor-pue" step="0.05" placeholder="1.2">
-            <button type="button" id="btn-calcular-pue">Calcular</button>
-        <div id="resultado-pue"></div>
-          </div>
-        <div>
-            <h4>Resumo dos Critérios</h4>
-            <ul id="lista-criterios-js"></ul>
-        </div>
-        <div>
-            <button type="button" id="btn-toggle-menu">Abrir/Fechar Menu</button>
-            <button type="button" id="btn-toggle-resumo">Mostrar/Esconder Resumo</button>
-        </div>
-            <p>Embora o resfriamento líquido represente um avanço decisivo na eficiência energética e na contenção do desperdício hídrico, sua adoção em larga escala no Brasil ainda enfrenta barreiras relacionadas ao custo inicial de capital — problema que políticas como o Programa Redata buscam mitigar — e à necessidade de adaptação estrutural de plantas antigas (legacy data centers).</p>
+        <section id="simulador-eficiencia" class="my-4 p-3 border rounded">
+  <h3>Simulador de Eficiência (PUE e WUE)</h3>
+
+  <div class="mb-2">
+    <label for="kw-ti" class="form-label">Potência dos equipamentos de TI (kW):</label>
+    <input type="number" id="kw-ti" class="form-control" value="100" step="any" min="0">
+  </div>
+
+  <div class="mb-2">
+    <label for="potencia-total" class="form-label">Potência total do Data Center (kW) — opcional para calcular PUE:</label>
+    <input type="number" id="potencia-total" class="form-control" placeholder="Ex: 125 (ou deixe vazio para usar PUE 1.2)" step="any" min="0">
+  </div>
+
+  <div class="mb-2">
+    <label for="valor-pue" class="form-label">PUE (padrão 1.2 se deixar vazio):</label>
+    <input type="number" id="valor-pue" class="form-control" placeholder="1.2" step="0.01" min="1">
+  </div>
+
+  <div class="mb-3">
+    <label for="agua-litros" class="form-label">Água usada no período (litros) — opcional para WUE:</label>
+    <input type="number" id="agua-litros" class="form-control" placeholder="Ex: 180" step="any" min="0">
+  </div>
+
+  <button type="button" id="btn-calcular-pue" class="btn btn-primary">Calcular</button>
+
+  <div id="resultado-pue" class="mt-3"></div>
+</section>
+            <br><p>Embora o resfriamento líquido represente um avanço decisivo na eficiência energética e na contenção do desperdício hídrico, sua adoção em larga escala no Brasil ainda enfrenta barreiras relacionadas ao custo inicial de capital — problema que políticas como o Programa Redata buscam mitigar — e à necessidade de adaptação estrutural de plantas antigas (legacy data centers).</p>
         
     </div>
 
