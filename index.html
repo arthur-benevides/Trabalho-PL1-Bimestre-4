@@ -17,38 +17,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <header>
-            <!--Barra de Navegação lateral-->
-    <div>
-        <button class = "btn btn-primary shadow rounded-start rounded-0 py-3 px-2 btn-toggle-nav"
-        type="button"
-        data-bs-toggle ="collapse"
-        data-bs-target="#menuFlutuanteLateral"
-        aria-expanded="true"
-        aria-controls="menuFlutuanteLateral"
-        tittle="Abrir/Fechar Menu">
-        <span class="seta">&#10094;</span>
-        </button>
+        <header class="sticky-top shadow-sm">
+  <nav class="navbar navbar-expand navbar-dark barra-grupo2 py-2">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand fw-bold mb-0 text-white titulo-grupo2" href="index.html">
+        Grupo 2
+      </a>
 
-        <div class="collapse collapse-horizontal show" id="menuLateralInterativo">
-            <div class="bg-white p-3 rounded-start border shadow"
-                 style="max-height: 350px;">
-                <ul class="nav nav-pills nav-pills-vertical flex-column">
-                   <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tema.html">Tema</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="conclusao.html">Conclusão</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+      <ul class="navbar-nav flex-row gap-3 ms-auto mb-0">
+        <li class="nav-item">
+          <a class="nav-link active fw-semibold px-1 text-white" href="index.html">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold px-1 text-white" href="tema.html">Tema</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold px-1 text-white" href="conclusao.html">Conclusão</a>
+        </li>
+      </ul>
     </div>
-        </header>
-
+  </nav>
+</header>
     <main>
                 <div class="container">
                     <h1>Estados Pesquisados para  ter Data Centers no Brasil e seus impactos ambientais</h1> <br>
@@ -106,8 +95,12 @@
                 </div>
     </main>
 
-    <footer>
-
-    </footer>
+    <div class="container">
+        <footer>
+            <hr>
+            <p>© 2026 Trabalho de Geografia</p>
+            <p>Desenvolvido para fins acadêmicos</p>
+        </footer>
+    </div>
 </body>
 </html>

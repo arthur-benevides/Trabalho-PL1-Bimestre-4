@@ -33,14 +33,43 @@ tr:nth-child(even) {
     padding: 10px;
 }
 
-/* MENU LATERAL */
+/* MENU */
+/* Cor da barra */
+header .navbar.barra-grupo2 {
+  background-color: #3551A4 !important;
+}
 
-.btn-toggle-nav .seta {
-        display: inline-block;
-        transition: transform 0.3s ease;
-    }
+/* Margem extra no Grupo 2 e nos links para aproximar do centro */
+header .titulo-grupo2 {
+  font-size: 2rem;
+  color: #ffffff !important;
+  margin-left: 2.5rem;
+}
 
-    /* Quando o menu está aberto, gira a seta para apontar para a direita (fechar) */
-    .btn-toggle-nav[aria-expanded="true"] .seta {
-        transform: rotate(180deg);
-    }
+header .navbar-nav {
+  margin-right: 2.5rem !important;
+}
+
+/* Links padrão */
+header .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  border-radius: 6px;
+  padding-left: 0.65rem !important;
+  padding-right: 0.65rem !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header .nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Ênfase na página atual (.active) */
+header .nav-link.active {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  background-color: rgba(255, 255, 255, 0.22);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}

@@ -1,5 +1,5 @@
 //Tema
-const nomePortal = "Data Centers no Brasil";
+/* const nomePortal = "Data Centers no Brasil";
 const turma = 117;
 
 const itensMenu = [
@@ -73,7 +73,7 @@ conteudo.innerHTML = `
         <div class="row">
             ${estados.map(estado => criarCartao(estado)).join("")}
         </div>
-    </section>`;  
+    </section>`;   */
 
     //Conclusão 
 

@@ -17,44 +17,35 @@
 </head>
 
 <body>
-  <header>
+    <header class="sticky-top shadow-sm">
+  <nav class="navbar navbar-expand navbar-dark barra-grupo2 py-2">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand fw-bold mb-0 text-white titulo-grupo2" href="index.html">
+        Grupo 2
+      </a>
 
-    <!--Barra de Navegação lateral-->
-    <div>
-        <button class = "btn btn-primary shadow rounded-start rounded-0 py-3 px-2 btn-toggle-nav"
-        type="button"
-        data-bs-toggle ="collapse"
-        data-bs-target="#menuFlutuanteLateral"
-        aria-expanded="true"
-        aria-controls="menuFlutuanteLateral"
-        tittle="Abrir/Fechar Menu">
-        <span class="seta">&#10094;</span>
-        </button>
-
-        <div class="collapse collapse-horizontal show" id="menuLateralInterativo">
-            <div class="bg-white p-3 rounded-start border shadow"
-                 style="max-height: 350px;">
-                <ul class="nav nav-pills nav-pills-vertical flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="tema.html">Tema</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="conclusao.html">Conclusão</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+      <ul class="navbar-nav flex-row gap-3 ms-auto mb-0">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold px-1 text-white" href="index.html">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active fw-semibold px-1 text-white" href="tema.html">Tema</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold px-1 text-white" href="conclusao.html">Conclusão</a>
+        </li>
+      </ul>
     </div>
-  </header>
+  </nav>
+</header>
+  
 
   <main>
 
     <div class="container">
+      <h1>Estados Pesquisados para  ter Data Centers no Brasil e seus impactos ambientais</h1> <br>
         <section class="topico3">
-            <h3> O Programa Redata e o Arcabouço de Incentivos no Brasil </h3>
+            <h3> O Programa Redata e o Arcabouço de Incentivos no Brasil </h3> <hr>
             <p>Historicamente, a competitividade do Brasil na atração de investimentos em infraestrutura
               digital foi limitada pelo elevado custo tributário incidente sobre a importação de bens de
               capital de tecnologia da informação e comunicação (TIC), como servidores, roteadores de alta
@@ -89,14 +80,14 @@
             </ul>
 
             <section class="topico4" id="impactos-ambientais">
-          <h3> Os Impactos Ambientais: O "Mito da Abundância" Hídrica e a Pressão Energética</h3>
+          <h3> Os Impactos Ambientais: O "Mito da Abundância" Hídrica e a Pressão Energética</h3><hr>
 
           <p>A expansão acelerada dos data centers no Brasil esbarra em limites ecológicos que vêm sendo amplamente
             debatidos por pesquisadores de universidades públicas, especialistas em recursos hídricos e organizações
             ambientais. Os principais eixos de impacto concentram-se no binômio água-energia e na alteração de
             microclimas locais.</p>
 
-          <img src="img/data-center.webp.jpg"
+          <img src="https://www.shutterstock.com/image-photo/two-rows-glowing-server-racks-260nw-2815109103.jpg"
             alt="Corredor de um data center com fileiras de racks de servidores e cabeamento instalado no teto.">
 
           <h4> O Consumo Hídrico e a Falta de Transparência</h4>
@@ -133,17 +124,17 @@
             afetando o conforto térmico de comunidades vizinhas.</p>
 
           
-          <h4>Explore os Impactos</h4>
+          <h4>Explore os Impactos</h4> <hr>
           <div class="imp-filtros" id="imp-filtros" role="group" aria-label="Filtrar impactos por categoria"></div>
           <p id="imp-contagem" aria-live="polite"></p>
           <div class="imp-grade" id="imp-cartoes"></div>
 
-          <h4>Mito ou Fato?</h4>
+          <h4>Mito ou Fato?</h4><br>
           <div id="imp-mitos"></div>
         </section>
 
             <section class="topico5">
-                <h3>Engenharia Sustentável: Indicadores (PUE/WUE) e Comparativo Técnico de Resfriamento em Data Centers de IA</h3>
+                <h3>Engenharia Sustentável: Indicadores (PUE/WUE) e Comparativo Técnico de Resfriamento em Data Centers de IA</h3> <hr>
                 <p>A transição da computação em nuvem tradicional para cargas de trabalho de Inteligência Artificial alterou radicalmente o perfil térmico das instalações. Enquanto racks de servidores corporativos convencionais operam com densidades de potência entre 5 kW e 10 kW, clusters modernos de treinamento e inferência de IA atingem facilmente entre <b>40 kW e mais de 120 kW por rack.</b></p>
                 <p>Para avaliar e mitigar o impacto ambiental dessa alta densidade, a engenharia de data centers utiliza dois indicadores globais padronizados pela organização The Green Grid:</p>
             <ul>
@@ -199,7 +190,7 @@
                   </table>
                 </div>
             </section>
-        <h3>Consulta Rápida e Simulador (PUE / WUE)</h3>
+        <h3>Consulta Rápida e Simulador (PUE / WUE)</h3> <hr>
         <div>
             <label for="campo-busca-metrica">Buscar métrica ou sistema:</label>
             <input type="text" id="campo-busca-metrica" placeholder="Ex: PUE, WUE, líquido, ar...">
@@ -229,8 +220,12 @@
 
   </main>
 
-  <footer>
-
-  </footer>
+  <div class="container">
+        <footer>
+          <hr>
+            <p>© 2026 Trabalho de Geografia</p>
+            <p>Desenvolvido para fins acadêmicos</p>
+        </footer>
+    </div>
 </body>
 </html>
