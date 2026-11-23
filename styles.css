@@ -1,3 +1,19 @@
+/*FONTES*/
+h1{
+   font-family: 'Montserrat', sans-serif;
+}
+h2{
+   font-family: 'Montserrat', sans-serif;
+}
+h3{
+   font-family: 'Montserrat', sans-serif;
+}
+h4{
+   font-family: 'poppins', Arial;
+}
+p{
+  font-family: 'poppins', Arial;
+}
 
 /* TEMA */
 .tabela {
@@ -102,4 +118,233 @@ header .nav-link.active {
 .btn-voltar-portal:focus-visible {
   outline: 2px solid #3551A4;
   outline-offset: 3px;
+}
+
+body {
+    background-color: #f4f7fc;
+    color: #263449;
+    line-height: 1.6;
+}
+
+main .container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 30px auto;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(23, 37, 84, 0.05);
+}
+
+/* titulo */
+h1 {
+    color: #172554;
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    border-left: 5px solid #3551a4;
+    padding-left: 15px;
+}
+
+/* sub titulp */
+h2 {
+    color: #233d7d;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+h3, h4 {
+    color: #3551a4;
+    font-weight: 600;
+}
+
+/* paragrafos */
+p {
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+/* linhas */
+li {
+    padding-left: 4px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* imagens */
+main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 20px auto;
+}
+
+/* tabelas */
+th {
+    color: #ffffff;
+    background-color: #3551a4;
+}
+
+tr:nth-child(even) {
+    background-color: #edf3fc;
+}
+
+/* linhas */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #dce5f5;
+    margin: 24px 0;
+}
+
+/* rodpe */
+footer {
+    background-color: #172554;
+    color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+footer p {
+    color: #dbeafe;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    main .container {
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    p {
+        text-align: left;
+    }
+}
+ /* ESTILO CSS */  
+
+ /* TEMA */
+
+.estilo-etiqueta {
+    display: inline-block;
+    padding: 5px 11px;
+    margin-bottom: 12px;
+    background-color: #eaf0fa;
+    color: #3551a4;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.estilo-paleta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 15px;
+    margin: 22px 0;
+}
+
+.estilo-cor-card {
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #dce5f5;
+    border-radius: 9px;
+}
+
+.estilo-amostra {
+    height: 85px;
+}
+
+.cor-blueberry { background-color: #132442; }
+.cor-knot-navy { background-color: #3551a4; }
+.cor-sea-salt { background-color: #8ad6d6; }
+.cor-hot-mustard { background-color: #d6e264; }
+.cor-purple { background-color: #80a1f8; }
+
+.estilo-cor-info {
+    padding: 12px;
+}
+
+.estilo-cor-info h3 {
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.estilo-cor-info p {
+    font-size: 0.82rem;
+    text-align: left;
+    margin-top: 8px;
+}
+
+.estilo-hex {
+    color: #64748b;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.estilo-observacao {
+    margin: 22px 0;
+    padding: 16px 18px;
+    background-color: #f0fafa;
+    border-left: 4px solid #8ad6d6;
+    border-radius: 6px;
+    color: #263449;
+}
+
+.estilo-fontes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin: 18px 0;
+}
+
+.estilo-fonte-card {
+    padding: 18px;
+    background-color: #fafbfe;
+    border: 1px solid #dce5f5;
+    border-radius: 8px;
+}
+
+.estilo-fonte-card .amostra-montserrat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #132442;
+}
+
+.estilo-fonte-card .amostra-poppins {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    color: #475569;
+}
+
+.estilo-lista li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .estilo-paleta {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+
+    .estilo-amostra {
+        height: 68px;
+    }
+
+    .estilo-fontes {
+        grid-template-columns: 1fr;
+    }
 }

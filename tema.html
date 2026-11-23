@@ -16,6 +16,11 @@
 
     <script src="script.js" defer></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -33,9 +38,14 @@
         <li class="nav-item">
           <a class="nav-link active fw-semibold px-1 text-white" href="tema.html">Tema</a>
         </li>
+          <li class="nav-item">
+          <a class="nav-link fw-semibold px-1 text-white" href="estilo.html">Estilo</a> </li>
         <li class="nav-item">
           <a class="nav-link fw-semibold px-1 text-white" href="conclusao.html">Conclusão</a>
         </li>
+      <li class="nav-item">   <button type="button" id="btn-voltar-portal" class="btn-voltar-portal">
+           Voltar ao Portal
+        </button></li>
       </ul>
     </div>
   </nav>
@@ -46,40 +56,40 @@
 
     <div class="container">
       <h1>Estados Pesquisados para  ter Data Centers no Brasil e seus impactos ambientais</h1> <br>
-        <section class="topico3">
-            <h3> O Programa Redata e o Arcabouço de Incentivos no Brasil </h3> <hr>
-            <p>Historicamente, a competitividade do Brasil na atração de investimentos em infraestrutura
-              digital foi limitada pelo elevado custo tributário incidente sobre a importação de bens de
-              capital de tecnologia da informação e comunicação (TIC), como servidores, roteadores de alta
-              capacidade e sistemas de refrigeração industrial. Esse cenário fazia com que grande parte do
-              tráfego de dados gerado por usuários e empresas brasileiras fosse processado em data centers
-              localizados nos Estados Unidos (especialmente na Virgínia do Norte), elevando custos cambiais
-              e reduzindo a soberania digital do país.</p>
-              <p>Para reverter esse quadro, a agenda pública brasileira estruturou o <strong> Programa Redata (Regime
-              Especial de Tributação para Serviços de Data Center)</strong>. O objetivo central do programa é reduzir
-              o custo de investimento inicial (CAPEX) para a implantação, modernização e ampliação de
-              infraestruturas de processamento e armazenamento de dados em território nacional. Quando
-              combinado ao excedente energético e à malha de cabos submarinos do Nordeste, o programa
-              cria uma sinergia estratégica que reduz simultaneamente o custo de implantação (CAPEX), o
-              custo operacional (OPEX) e a latência internacional.</p>
-              <p>Os pilares estruturais do Programa Redata dividem-se em três eixos fundamentais: </p>
-        
-            <ul>
-                <li><strong>Desoneração Tributária de Bens de Capital:</strong> Suspensão ou aplicação de alíquota  zero
-                    de tributos federais (PIS/Pasep, Cofins, IPI e Imposto de Importação) na aquisição no
-                    mercado interno ou na importação de servidores, unidades de armazenamento,
-                    equipamentos de rede e sistemas críticos de energia e climatização sem similar
-                    nacional. </li>
-                <li><strong>Estímulo à Cadeia Produtiva, Pesquisa e Desenvolvimento (P&D):</strong> Fomento à
-                    integração de fornecedores nacionais de engenharia, construção civil e componentes
-                    elétricos, acompanhado da exigência de contrapartidas financeiras voltadas à pesquisa,
-                    desenvolvimento e capacitação tecnológica em parceria com universidades e institutos
-                    de ciência e tecnologia (ICTs). </li>
-                <li><strong>Condicionalidades Socioambientais:</strong> Estabelecimento de diretrizes que vinculam a
-                    fruição dos benefícios fiscais à contratação de energia proveniente de fontes
-                    renováveis e ao cumprimento de metas rigorosas de eficiência energética e hídrica,
-                    evitando que a renúncia fiscal subsidie empreendimentos ecologicamente predatórios. </li>
-            </ul>
+      <section class="topico3">
+              <h3> O Programa Redata e o Arcabouço de Incentivos no Brasil </h3> <hr>
+              <p>Historicamente, a competitividade do Brasil na atração de investimentos em infraestrutura
+                digital foi limitada pelo elevado custo tributário incidente sobre a importação de bens de
+                capital de tecnologia da informação e comunicação (TIC), como servidores, roteadores de alta
+                capacidade e sistemas de refrigeração industrial. Esse cenário fazia com que grande parte do
+                tráfego de dados gerado por usuários e empresas brasileiras fosse processado em data centers
+                localizados nos Estados Unidos (especialmente na Virgínia do Norte), elevando custos cambiais
+                e reduzindo a soberania digital do país.</p>
+                <p>Para reverter esse quadro, a agenda pública brasileira estruturou o <strong> Programa Redata (Regime
+                Especial de Tributação para Serviços de Data Center)</strong>. O objetivo central do programa é reduzir
+                o custo de investimento inicial (CAPEX) para a implantação, modernização e ampliação de
+                infraestruturas de processamento e armazenamento de dados em território nacional. Quando
+                combinado ao excedente energético e à malha de cabos submarinos do Nordeste, o programa
+                cria uma sinergia estratégica que reduz simultaneamente o custo de implantação (CAPEX), o
+                custo operacional (OPEX) e a latência internacional.</p>
+                <p>Os pilares estruturais do Programa Redata dividem-se em três eixos fundamentais: </p>
+          
+              <ul>
+                  <li><strong>Desoneração Tributária de Bens de Capital:</strong> Suspensão ou aplicação de alíquota  zero
+                      de tributos federais (PIS/Pasep, Cofins, IPI e Imposto de Importação) na aquisição no
+                      mercado interno ou na importação de servidores, unidades de armazenamento,
+                      equipamentos de rede e sistemas críticos de energia e climatização sem similar
+                      nacional. </li>
+                  <li><strong>Estímulo à Cadeia Produtiva, Pesquisa e Desenvolvimento (P&D):</strong> Fomento à
+                      integração de fornecedores nacionais de engenharia, construção civil e componentes
+                      elétricos, acompanhado da exigência de contrapartidas financeiras voltadas à pesquisa,
+                      desenvolvimento e capacitação tecnológica em parceria com universidades e institutos
+                      de ciência e tecnologia (ICTs). </li>
+                  <li><strong>Condicionalidades Socioambientais:</strong> Estabelecimento de diretrizes que vinculam a
+                      fruição dos benefícios fiscais à contratação de energia proveniente de fontes
+                      renováveis e ao cumprimento de metas rigorosas de eficiência energética e hídrica,
+                      evitando que a renúncia fiscal subsidie empreendimentos ecologicamente predatórios. </li>
+              </ul>
 
             <section class="topico4" id="impactos-ambientais">
           <h3> Os Impactos Ambientais: O "Mito da Abundância" Hídrica e a Pressão Energética</h3><hr>
@@ -192,34 +202,35 @@
                   </table>
                 </div>
             </section>
+
         <section id="simulador-eficiencia" class="my-4 p-3 border rounded">
-  <h3>Simulador de Eficiência (PUE e WUE)</h3>
+     <h3>Simulador de Eficiência (PUE e WUE)</h3>
+      <div class="mb-2">
+        <label for="kw-ti" class="form-label">Potência dos equipamentos de TI (kW):</label>
+        <input type="number" id="kw-ti" class="form-control" value="100" step="any" min="0">
+      </div>
 
-  <div class="mb-2">
-    <label for="kw-ti" class="form-label">Potência dos equipamentos de TI (kW):</label>
-    <input type="number" id="kw-ti" class="form-control" value="100" step="any" min="0">
-  </div>
+      <div class="mb-2">
+        <label for="potencia-total" class="form-label">Potência total do Data Center (kW) — opcional para calcular PUE:</label>
+        <input type="number" id="potencia-total" class="form-control" placeholder="Ex: 125 (ou deixe vazio para usar PUE 1.2)" step="any" min="0">
+      </div>
 
-  <div class="mb-2">
-    <label for="potencia-total" class="form-label">Potência total do Data Center (kW) — opcional para calcular PUE:</label>
-    <input type="number" id="potencia-total" class="form-control" placeholder="Ex: 125 (ou deixe vazio para usar PUE 1.2)" step="any" min="0">
-  </div>
+      <div class="mb-2">
+        <label for="valor-pue" class="form-label">PUE (padrão 1.2 se deixar vazio):</label>
+        <input type="number" id="valor-pue" class="form-control" placeholder="1.2" step="0.01" min="1">
+      </div>
 
-  <div class="mb-2">
-    <label for="valor-pue" class="form-label">PUE (padrão 1.2 se deixar vazio):</label>
-    <input type="number" id="valor-pue" class="form-control" placeholder="1.2" step="0.01" min="1">
-  </div>
+      <div class="mb-3">
+        <label for="agua-litros" class="form-label">Água usada no período (litros) — opcional para WUE:</label>
+        <input type="number" id="agua-litros" class="form-control" placeholder="Ex: 180" step="any" min="0">
+      </div>
 
-  <div class="mb-3">
-    <label for="agua-litros" class="form-label">Água usada no período (litros) — opcional para WUE:</label>
-    <input type="number" id="agua-litros" class="form-control" placeholder="Ex: 180" step="any" min="0">
-  </div>
+      <button type="button" id="btn-calcular-pue" class="btn btn-primary">Calcular</button>
 
-  <button type="button" id="btn-calcular-pue" class="btn btn-primary">Calcular</button>
+      <div id="resultado-pue" class="mt-3"></div>
+      </section>
 
-  <div id="resultado-pue" class="mt-3"></div>
-</section>
-            <br><p>Embora o resfriamento líquido represente um avanço decisivo na eficiência energética e na contenção do desperdício hídrico, sua adoção em larga escala no Brasil ainda enfrenta barreiras relacionadas ao custo inicial de capital — problema que políticas como o Programa Redata buscam mitigar — e à necessidade de adaptação estrutural de plantas antigas (legacy data centers).</p>
+            <section><br><p>Embora o resfriamento líquido represente um avanço decisivo na eficiência energética e na contenção do desperdício hídrico, sua adoção em larga escala no Brasil ainda enfrenta barreiras relacionadas ao custo inicial de capital — problema que políticas como o Programa Redata buscam mitigar — e à necessidade de adaptação estrutural de plantas antigas (legacy data centers).</p></section>
         
     </div>
 
